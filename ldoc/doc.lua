@@ -284,7 +284,7 @@ function File:finish()
             local summary = item.summary:gsub('%.$','')
             local lookup_name
             if doc.class_tag(item.type) then
-               display_name = 'Class '..item.name
+               display_name = item.name
                lookup_name = item.name
                item.module = this_mod
                this_mod.items.by_name[item.name] = item
