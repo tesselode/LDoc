@@ -52,8 +52,8 @@ p.name {
 }
 
 pre {
-    background-color: rgb(245, 245, 245);
-    border: 1px solid #C0C0C0; /* silver */
+    background-color: #333;
+    color: #ddd;
     padding: 10px;
     margin: 10px 0 10px 0;
     overflow: auto;
@@ -213,4 +213,4 @@ a:target + * {
 }
 
 ]]
-.. require('ldoc.html._code_css')
+.. require('ldoc.html._code_dark_css')
