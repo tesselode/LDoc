@@ -1,228 +1,118 @@
-return require('ldoc.html._reset_css') .. [[
-
+return [[
 body {
-    margin-left: 1em;
-    margin-right: 1em;
-    font-family: arial, helvetica, geneva, sans-serif;
-    background-color: #ffffff; margin: 0px;
-}
-
-img {
-    max-width: 100%;
-}
-
-code, tt { font-family: monospace; font-size: 1.1em; }
-span.parameter { font-family:monospace; }
-span.parameter:after { content:":"; }
-span.types:before { content:"("; }
-span.types:after { content:")"; }
-.type { font-weight: bold; font-style:italic }
-
-body, p, td, th { font-size: .95em; line-height: 1.2em;}
-
-p, ul { margin: 10px 0 0 0px;}
-
-strong { font-weight: bold;}
-
-em { font-style: italic;}
-
-h1 {
-    font-size: 1.5em;
-    margin: 20px 0 20px 0;
-}
-h2, h3, h4 { margin: 15px 0 10px 0; }
-h2 { font-size: 1.25em; }
-h3 { font-size: 1.15em; }
-h4 { font-size: 1.06em; }
-
-a:link { font-weight: bold; color: #004080; text-decoration: none; }
-a:visited { font-weight: bold; color: #006699; text-decoration: none; }
-a:link:hover { text-decoration: underline; }
-
-hr {
-    color:#cccccc;
-    background: #00007f;
-    height: 1px;
-}
-
-blockquote { margin-left: 3em; }
-
-ul { list-style-type: disc; }
-
-p.name {
-    font-family: "Andale Mono", monospace;
-    padding-top: 1em;
-}
-
-pre {
-    background-color: rgb(245, 245, 245);
-    border: 1px solid #C0C0C0; /* silver */
-    padding: 10px;
-    margin: 10px 0 10px 0;
-    overflow: auto;
-    font-family: "Andale Mono", monospace;
-}
-
-pre.example {
-    font-size: .85em;
-}
-
-table.index { border: 1px #00007f; }
-table.index td { text-align: left; vertical-align: top; }
-
-#container {
-    margin-left: 1em;
-    margin-right: 1em;
-    background-color: #f0f0f0;
-}
-
-#product {
-    text-align: center;
-    border-bottom: 1px solid #cccccc;
-    background-color: #ffffff;
-}
-
-#product big {
-    font-size: 2em;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: #e8e8e8;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.375;
 }
 
 #main {
-    background-color: #f0f0f0;
-    border-left: 2px solid #cccccc;
+    display: flex;
 }
 
 #navigation {
-    float: left;
-    width: 14em;
-    vertical-align: top;
-    background-color: #f0f0f0;
-    overflow: visible;
-}
-
-#navigation h2 {
-    background-color:#e7e7e7;
-    font-size:1.1em;
-    color:#000000;
-    text-align: left;
-    padding:0.2em;
-    border-top:1px solid #dddddd;
-    border-bottom:1px solid #dddddd;
-}
-
-#navigation ul
-{
-    font-size:1em;
-    list-style-type: none;
-    margin: 1px 1px 10px 1px;
+    position: sticky;
+    align-self: flex-start;
+    top: 0;
+    height: 100vh;
+    min-width: 250px;
+    padding-right: 1em;
+    border-right: 1px solid #bbb;
+    margin-right: 1em;
 }
 
 #navigation li {
+    list-style-type: none;
     text-indent: -1em;
-    display: block;
-    margin: 3px 0px 0px 22px;
 }
 
-#navigation li li a {
-    margin: 0px 3px 0px -1em;
+a {
+    color: rgb(0, 90, 207);
+    text-decoration: none;
 }
 
-#content {
-    margin-left: 14em;
-    padding: 1em;
-    width: 700px;
-    border-left: 2px solid #cccccc;
-    border-right: 2px solid #cccccc;
-    background-color: #ffffff;
+a:target + * {
+    background-color: rgba(255, 255, 0, .25);
 }
 
-#about {
-    clear: both;
-    padding: 5px;
-    border-top: 2px solid #cccccc;
-    background-color: #ffffff;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-@media print {
+tr {
+    background: #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background: #d8d8d8;
+}
+
+td {
+    padding: .25em;
+}
+
+h3 {
+    margin-bottom: .25em;
+    font-size: 1em;
+}
+
+dd {
+    margin-bottom: 1.5em;
+}
+
+.parameter {
+    font-family: monospace;
+}
+
+.parameter:after {
+    content: ":";
+}
+
+.types:before {
+    content: "(";
+}
+
+.types:after {
+    content: ")";
+}
+
+pre {
+    padding: .5em;
+    background: #ddd;
+    white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: dark) {
     body {
-        font: 12pt "Times New Roman", "TimeNR", Times, serif;
-    }
-    a { font-weight: bold; color: #004080; text-decoration: underline; }
-
-    #main {
-        background-color: #ffffff;
-        border-left: 0px;
-    }
-
-    #container {
-        margin-left: 2%;
-        margin-right: 2%;
-        background-color: #ffffff;
-    }
-
-    #content {
-        padding: 1em;
-        background-color: #ffffff;
+        background: #222;
+        color: #fff;
     }
 
     #navigation {
-        display: none;
+        border-right: 1px solid #444;
     }
-    pre.example {
-        font-family: "Andale Mono", monospace;
-        font-size: 10pt;
-        page-break-inside: avoid;
+
+    a {
+        color: deepskyblue;
     }
-}
 
-table.module_list {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #cccccc;
-    border-collapse: collapse;
-}
-table.module_list td {
-    border-width: 1px;
-    padding: 3px;
-    border-style: solid;
-    border-color: #cccccc;
-}
-table.module_list td.name { background-color: #f0f0f0; min-width: 200px; }
-table.module_list td.summary { width: 100%; }
+    tr {
+        background: #282828;
+    }
 
+    tr:nth-child(even) {
+        background: #333;
+    }
 
-table.function_list {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #cccccc;
-    border-collapse: collapse;
-}
-table.function_list td {
-    border-width: 1px;
-    padding: 3px;
-    border-style: solid;
-    border-color: #cccccc;
-}
-table.function_list td.name { background-color: #f0f0f0; min-width: 200px; }
-table.function_list td.summary { width: 100%; }
-
-ul.nowrap {
-    overflow:auto;
-    white-space:nowrap;
-}
-
-dl.table dt, dl.function dt {border-top: 1px solid #ccc; padding-top: 1em;}
-dl.table dd, dl.function dd {padding-bottom: 1em; margin: 10px 0 0 20px;}
-dl.table h3, dl.function h3 {font-size: .95em;}
-
-/* stop sublists from having initial vertical space */
-ul ul { margin-top: 0px; }
-ol ul { margin-top: 0px; }
-ol ol { margin-top: 0px; }
-ul ol { margin-top: 0px; }
-
-/* make the target distinct; helps when we're navigating to a function */
-a:target + * {
-  background-color: #FF9;
+    pre {
+        background: #181818;
+    }
 }
 
 ]]
