@@ -1,11 +1,39 @@
 return [[
+
+:root {
+    --background: #ffffff;
+    --highlight: #efefef;
+    --foreground: #4d4d4c;
+    --accent: #c82829;
+    --comment: #8e908c;
+    --string: #f5871f;
+    --number: #4271ae;
+    --keyword: #eab700;
+    --global: #8959a8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1d1f21;
+        --highlight: #282a2e;
+        --foreground: #c5c8c6;
+        --accent: #cc6666;
+        --comment: #969896;
+        --string: #de935f;
+        --number: #81a2be;
+        --keyword: #f0c674;
+        --global: #b294bb;
+    }
+}
+
 body {
     width: 100%;
     max-width: 1200px;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    background: #e8e8e8;
+    background: var(--background);
+    color: var(--foreground);
     font-family: sans-serif;
     font-size: 18px;
     line-height: 1.375;
@@ -22,7 +50,7 @@ body {
     height: 100vh;
     min-width: 250px;
     padding-right: 1em;
-    border-right: 1px solid #bbb;
+    border-right: 1px solid var(--foreground);
     margin-right: 1em;
 }
 
@@ -32,7 +60,7 @@ body {
 }
 
 a {
-    color: rgb(0, 90, 207);
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -45,12 +73,8 @@ table {
     border-collapse: collapse;
 }
 
-tr {
-    background: #e0e0e0;
-}
-
 tr:nth-child(even) {
-    background: #d8d8d8;
+    background: var(--highlight);
 }
 
 td {
@@ -67,6 +91,7 @@ dd {
 }
 
 .parameter {
+    background: var(--highlight);
     font-family: monospace;
 }
 
@@ -82,12 +107,6 @@ dd {
     content: ")";
 }
 
-pre {
-    padding: .5em;
-    background: #ddd;
-    white-space: pre-wrap;
-}
-
 img {
     display: block;
     margin-left: auto;
@@ -95,31 +114,16 @@ img {
     max-width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #222;
-        color: #fff;
-    }
-
-    #navigation {
-        border-right: 1px solid #444;
-    }
-
-    a {
-        color: deepskyblue;
-    }
-
-    tr {
-        background: #282828;
-    }
-
-    tr:nth-child(even) {
-        background: #333;
-    }
-
-    pre {
-        background: #181818;
-    }
+pre {
+    padding: .5em;
+    background: var(--highlight);
+    white-space: pre-wrap;
 }
+
+pre .keyword { color: var(--keyword); font-weight: bold; }
+pre .string { color: var(--string); }
+pre .number { color: var(--number); }
+pre .comment { color: var(--comment); }
+pre .global { color: var(--global); }
 
 ]]
