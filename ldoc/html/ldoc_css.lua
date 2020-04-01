@@ -123,4 +123,3 @@ img {
 }
 
 ]]
-.. require('ldoc.html._code_css')
