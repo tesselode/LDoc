@@ -88,6 +88,13 @@ pre {
     white-space: pre-wrap;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background: #222;
