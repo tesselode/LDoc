@@ -49,9 +49,9 @@ body {
     top: 0;
     height: 100vh;
     min-width: 250px;
-    padding-right: 1em;
+    padding-right: 2em;
     border-right: 1px solid var(--foreground);
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 #navigation li {
@@ -90,7 +90,7 @@ dd {
     margin-bottom: 1.5em;
 }
 
-.parameter {
+.parameter, code {
     background: var(--highlight);
     font-family: monospace;
 }
